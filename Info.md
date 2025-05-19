@@ -1,3 +1,4 @@
+https://www.youtube.com/watch?v=GMnWXlJnbNo&t=649s&ab_channel=GentlemanProgramming
 # Cuando usar React Vanilla vs Framework
 
 ## REACT 
@@ -34,7 +35,8 @@ App -> React + librerias
 * UseCallback
 * UseMemo
 
-## Crear un proyecto nuevo
-> npm create vite@latest my-app -- --template react
+## Crear un proyecto nuevo ( con TYPESCRIPT )
+> npm create vite@latest my-app -- --template react-ts 
 > cd my-app
 > npm install
+
