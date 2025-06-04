@@ -3,11 +3,18 @@ import reactLogo from './assets/react.svg'
 import viteLogo from '/vite.svg'
 import './App.css'
 import StyledComponent from './StyledComponent'
-import { CustomButton, UseEffectComponent, UsingCustomHook } from './components'
+import { CustomButton, Parent, UseEffectComponent, UsingCustomHook, Child } from './components'
 function App() {
   const [count, setCount] = useState(0)
   const countMore = () => {
     setCount((count) => count + 1);
+  }
+
+  const alertMessage = () => {
+    alert('Hello, this is a custom alert message!');
+  }
+  const alertMessageFromChild = () => {
+    alert('Hello, this is a custom alert message from the child component!');
   }
   return (
     <>
@@ -29,9 +36,21 @@ function App() {
       <p className="read-the-docs">
         Click on the Vite and React logos to learn more
       </p>
+      <Parent title='Enviar alerta desde el padre' parentMethod={alertMessage} >
+        <Child>
+          <p>Hola desde el padre</p>
+        </Child>
+      </Parent>
+
+      <Child>
+        <Parent title='Enviar alerta desde el hijo' parentMethod={alertMessageFromChild} >
+          <p>Hola desde el hijo</p>
+        </Parent>
+      </Child>
       <StyledComponent />
       <UseEffectComponent />
       <UsingCustomHook />
+
     </>
   )
 }

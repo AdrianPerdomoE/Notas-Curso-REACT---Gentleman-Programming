@@ -3,19 +3,26 @@ import type { ReactNode } from "react";
 interface Props {
     children: ReactNode;
     title: string;
+    parentMethod?: () => void;
 }
 
-export const Children = ({ children }: Pick<Props, "children">) => {
+export const Child = ({ children }: Pick<Props, "children">) => {
     return (
-        { children }
+
+        <div style={{ color: 'blue', border: '1px solid black', padding: '10px' }}>
+            {children}
+        </div>
     );
 }
 
-export const Parent = ({ children, title }: Props) => {
+export const Parent = ({ children, title, parentMethod }: Props) => {
     return (
-        <div>
+        <>
             <h1>{title}</h1>
-            {children}
-        </div>
+            <button onClick={parentMethod} >
+                {children}
+            </button>
+        </>
+
     );
 }
