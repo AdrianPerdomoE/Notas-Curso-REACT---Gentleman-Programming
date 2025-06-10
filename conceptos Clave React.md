@@ -33,3 +33,5 @@
     * **useRef:** No genera re - renderizados, lo hace interno en el componente, toca usar estados para que visualmente se actualicen los valores
         * objetivo 1 => Nos permite crear una referencia **mutable**, que persiste durante todo el ciclo de vida del componente, sin causar un ***Re-render***
           * objetivo 2 => Hacer referencia a un elemento del DOM
+    * **useMemo:** Controlar si el beneficio de memorizarlo es superior al de recalcularlo, ***En react 19 ya es automatico***
+     *  objetivo 1 => Memorizar (crear cache) el resultado de ejecutar una función costosa, para evitar que se vuelta a llamar el método
