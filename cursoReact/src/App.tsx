@@ -3,9 +3,13 @@ import reactLogo from './assets/react.svg'
 import viteLogo from '/vite.svg'
 import './App.css'
 import StyledComponent from './StyledComponent'
-import { CustomButton, Parent, UseEffectComponent, UsingCustomHook, Child } from './components'
+import { CustomButton, Parent, UseEffectComponent, UsingCustomHook, Child, ContextComponent } from './components'
+import { GlobalProvider } from './context'
+
+
 function App() {
   const [count, setCount] = useState(0)
+
   const countMore = () => {
     setCount((count) => count + 1);
   }
@@ -17,7 +21,7 @@ function App() {
     alert('Hello, this is a custom alert message from the child component!');
   }
   return (
-    <>
+    <GlobalProvider>
       <div>
         <a href="https://vite.dev" target="_blank">
           <img src={viteLogo} className="logo" alt="Vite logo" />
@@ -47,11 +51,12 @@ function App() {
           <p>Hola desde el hijo</p>
         </Parent>
       </Child>
+      <ContextComponent />
       <StyledComponent />
       <UseEffectComponent />
       <UsingCustomHook />
 
-    </>
+    </GlobalProvider>
   )
 }
 

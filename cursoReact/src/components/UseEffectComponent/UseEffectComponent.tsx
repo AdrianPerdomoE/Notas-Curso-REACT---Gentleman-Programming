@@ -7,9 +7,9 @@ export const UseEffectComponent = () => {
     // Cuando queremos obtener datos de una API, tenemo que comunicarnos con un endpoint - una entidad externa al componente
     const consoleLoader = useCallback((loadingValue: boolean) => {
         setLoading(loadingValue);
-        console.info("loading", loading)
+        console.log("Loading state changed:", loadingValue);
     },
-        [loading]
+        []
     );
     // fake api fetch
     const fetchData = useCallback(async () => {
