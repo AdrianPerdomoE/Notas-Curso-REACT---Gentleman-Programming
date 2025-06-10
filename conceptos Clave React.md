@@ -30,3 +30,6 @@
     * ***Service*** Se puede usar servicios para compartir informacion entre componentes, importante, a diferencia de angular, estos no son construidos automaticamente y no son ni injectables ni singleton, asi que debe manejarse casos especiales de manera propia y ademas , recomendable, exportar al final del documento donde se ddefine el servicio, una instancia para usarla tipo singleton en la app, hay que tener en cuenta el problema de condicion de carrera, y es que en algun componente se pida una informacion que aun no existe en el servicio
     * ***Proyecion de contenido*** se puede esperar un children en un componente tipo ReactNode, el cual sera un elemento Jsx que se pasa entre <> </> y se puede directamente pasar un componente que sera luego utilizado en otro componente
     * **Context** Es una via de comunicacion de eventos, para poder utilizarlos, los componentes deben ser envueltos en algun punto por un provider que permita extraer los datos de este contexto
+    * **useRef:** No genera re - renderizados, lo hace interno en el componente, toca usar estados para que visualmente se actualicen los valores
+        * objetivo 1 => Nos permite crear una referencia **mutable**, que persiste durante todo el ciclo de vida del componente, sin causar un ***Re-render***
+          * objetivo 2 => Hacer referencia a un elemento del DOM

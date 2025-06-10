@@ -3,7 +3,7 @@ import reactLogo from './assets/react.svg'
 import viteLogo from '/vite.svg'
 import './App.css'
 import StyledComponent from './StyledComponent'
-import { CustomButton, Parent, UseEffectComponent, UsingCustomHook, Child, ContextComponent } from './components'
+import { CustomButton, Parent, UseEffectComponent, UsingCustomHook, Child, ContextComponent, BookReader, FocusInput } from './components'
 import { GlobalProvider } from './context'
 
 
@@ -52,6 +52,8 @@ function App() {
         </Parent>
       </Child>
       <ContextComponent />
+      <BookReader />
+      <FocusInput />
       <StyledComponent />
       <UseEffectComponent />
       <UsingCustomHook />
