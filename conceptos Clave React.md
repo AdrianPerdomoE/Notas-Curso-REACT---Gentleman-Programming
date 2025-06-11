@@ -36,3 +36,4 @@
     * **useMemo:** Controlar si el beneficio de memorizarlo es superior al de recalcularlo, ***En react 19 ya es automatico***
      *  objetivo 1 => Memorizar (crear cache) el resultado de ejecutar una función costosa, para evitar que se vuelta a llamar el método
     * **memo** Es posible envolver un componente en memo y esto permitira, almacenar en cache, el componente y si sus props no han cambiado, entonces, no se realizara el re -render (osea, permite skipear la redederizacion si no es necesario actualizar el componente)
+    * **Portal** Es Ubicar un componente de JSX en cualquier punto que se desee de la aplicación
