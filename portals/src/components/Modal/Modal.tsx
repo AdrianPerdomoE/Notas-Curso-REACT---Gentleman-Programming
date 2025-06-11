@@ -1,6 +1,6 @@
 import { useCallback, useEffect, useRef, type ReactNode, type MouseEvent } from "react";
 import { createPortal } from "react-dom";
-import { useModalContext } from "./context/ModalContext";
+import { useModalContext } from "./context/useModalContext";
 import "./Modal.scss";
 
 interface ModalProps {
