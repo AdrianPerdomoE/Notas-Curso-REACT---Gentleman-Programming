@@ -5,7 +5,8 @@ import './App.css'
 import StyledComponent from './StyledComponent'
 import { CustomButton, Parent, UseEffectComponent, UsingCustomHook, Child, ContextComponent, BookReader, FocusInput, ShoppingCart, PhoneBook } from './components'
 import { GlobalProvider } from './context'
-import { PromiseError } from './components/ErrorBoundaryExamples/PromiseError'
+import { RickAndMorty } from './components/FecthComponent/RickAndMorty'
+
 
 
 function App() {
@@ -56,6 +57,7 @@ function App() {
           <p>Hola desde el hijo</p>
         </Parent>
       </Child>
+      <RickAndMorty />
       <ContextComponent />
       <BookReader />
       <FocusInput />
