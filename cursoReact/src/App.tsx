@@ -5,19 +5,24 @@ import './App.css'
 import StyledComponent from './StyledComponent'
 import { CustomButton, Parent, UseEffectComponent, UsingCustomHook, Child, ContextComponent, BookReader, FocusInput, ShoppingCart, PhoneBook } from './components'
 import { GlobalProvider } from './context'
+import { PromiseError } from './components/ErrorBoundaryExamples/PromiseError'
 
 
 function App() {
   const [count, setCount] = useState(0)
 
   const countMore = () => {
+
     setCount((count) => count + 1);
+    throw new Error('This is a test error');
+
   }
 
   const alertMessage = () => {
     alert('Hello, this is a custom alert message!');
   }
   const alertMessageFromChild = () => {
+
     alert('Hello, this is a custom alert message from the child component!');
   }
   return (
@@ -59,7 +64,9 @@ function App() {
       <UsingCustomHook />
       <ShoppingCart />
       <PhoneBook />
+
     </GlobalProvider>
+
   )
 }
 
