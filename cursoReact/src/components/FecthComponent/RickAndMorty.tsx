@@ -1,5 +1,5 @@
 import { type Character } from "../../models/character.model";
-import { getCharacter } from "../../services/api.service";
+import { getCharacter, getCharacters, type CharactersResponse } from "../../services/api.service";
 import { UseAPI } from "../../hooks/useAPI";
 
 
@@ -15,22 +15,27 @@ export const RickAndMorty = () => {
     }, []);
     */
 
-    const { loading, error, data, fetch } = UseAPI<Character>(getCharacter(2), { autoFetch: false });
+    const { loading, error, data, fetch } = UseAPI<Character, number>(getCharacter, { autoFetch: true, params: 1 });
+    const { loading: l2, error: e2, data: d2, fetch: f2 } = UseAPI<CharactersResponse, void>(getCharacters, { autoFetch: true });
 
-    if (loading) {
+    if (loading || l2) {
         return <p>Loading...</p>;
     }
     if (error) {
         return <p>Error: {error.message}</p>;
     }
-    if (!data) {
+    if (e2) {
+        return <p>Error: {e2.message}</p>;
+    }
+    if (!data || !d2) {
         return (
             <>
                 <p>No data found</p>
-                <button onClick={fetch} >Fetch</button>
+                <button onClick={() => fetch(2)} >Fetch</button>
             </>
         )
     }
+
     return (
         <>
             <h1>Rick and Morty</h1>
@@ -40,7 +45,13 @@ export const RickAndMorty = () => {
                 <p>Status: {data.status}</p>
                 <p>Species: {data.species}</p>
             </div>
+            <button onClick={() => fetch(2)} >Fetch</button>
 
+            <h2>Characters List size</h2>
+            <p>{d2.results.length}</p>
+
+            <button onClick={() => f2()} >Fetch again</button>
         </>
     );
 }
+
