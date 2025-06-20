@@ -38,3 +38,6 @@
     * **memo** Es posible envolver un componente en memo y esto permitira, almacenar en cache, el componente y si sus props no han cambiado, entonces, no se realizara el re -render (osea, permite skipear la redederizacion si no es necesario actualizar el componente)
     * **Portal** Es Ubicar un componente de JSX en cualquier punto que se desee de la aplicación
     * **Error boundary** Es posible con React tener un control mas detallado de los errores en ejecucion de los componentes y controlar el curso de accion o la pantalla a mostrar, solo reconoce errores durante el renderizado
+    * **React Router:** Puede instalarse con el comando ***npm i react-router-dom***
+        * Se aconseja crear dos carpetas, una carpeta public, para aquellos elementos sin validación de identidad para su acceso y una carpeta private, para paginas protegidas y requieran autorización 
+        * ***BrowserRouter***  Es un router que se utiliza en buscadores web, provee las rutas que iran en una aplicacion Web
